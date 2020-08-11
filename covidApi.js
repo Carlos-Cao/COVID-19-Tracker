@@ -12,7 +12,7 @@ function trackData() {
         data.Countries.forEach((item) => {
             console.log(item);
             document.getElementById("data").innerHTML +=
-                ("<table><tr><td><u><b>" + item.Country + "</b></u><tr><td>" +
+                ("<table><tr><td class='country'><u><b>" + item.Country + "</b></u><tr><td>" +
                     "<tr><td> Country Code: " + item.CountryCode + "</tr></td>" +
                     "<tr><td> Date Updated: " + item.Date + "</tr></td>" +
                     "<tr><td><br><u> Cases Confirmed </u><td><tr>" +
