@@ -8,9 +8,7 @@ function trackData() {
     );
     const streamPromise = fetchPromise.then((response) => response.json());
     streamPromise.then((data) => {
-        console.log(data);
         data.Countries.forEach((item) => {
-            console.log(item);
             document.getElementById("data").innerHTML +=
                 ("<table><tr><td class='country'><u><b>" + item.Country + "</b></u><tr><td>" +
                     "<tr><td> Country Code: " + item.CountryCode + "</tr></td>" +
@@ -27,5 +25,22 @@ function trackData() {
                     "</table><hr>"
                 )
         });
+    });
+}
+
+function totalData() {
+    const fetchPromises = fetch("https://api.covid19api.com/world/total",
+        {
+            headers: {
+                "Accept": "application/json",
+            }
+        },
+    );
+    const streamPromises = fetchPromises.then((response) => response.json());
+    streamPromises.then((data) => {
+        console.log(data);
+        document.getElementById("total").innerHTML +=
+            ("<p> Confirmed: " + data.TotalConfirmed + ", Recovered: " + data.TotalRecovered + ", Deaths: " + data.TotalDeaths + "</p>"
+            )
     });
 }
