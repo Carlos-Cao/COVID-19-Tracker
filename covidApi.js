@@ -38,7 +38,6 @@ function totalData() {
     );
     const streamPromises = fetchPromises.then((response) => response.json());
     streamPromises.then((data) => {
-        console.log(data);
         document.getElementById("total").innerHTML +=
             ("<p> Confirmed: " + data.TotalConfirmed + ", Recovered: " + data.TotalRecovered + ", Deaths: " + data.TotalDeaths + "</p>"
             )
